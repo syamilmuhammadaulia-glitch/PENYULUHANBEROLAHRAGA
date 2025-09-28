@@ -1,0 +1,75 @@
+// script.js
+
+// Pertanyaan kuis
+const quizData = [
+  {
+    question: "Berapa menit minimal olahraga yang disarankan setiap hari?",
+    options: ["10 menit", "30 menit", "60 menit"],
+    answer: "30 menit"
+  },
+  {
+    question: "Olahraga apa yang termasuk olahraga kardio?",
+    options: ["Lari", "Catur", "Menggambar"],
+    answer: "Lari"
+  },
+  {
+    question: "Apa manfaat utama olahraga untuk kesehatan mental?",
+    options: ["Meningkatkan stres", "Meningkatkan mood", "Membuat cepat lapar"],
+    answer: "Meningkatkan mood"
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+// Tampilkan pertanyaan
+function loadQuestion() {
+  const quizContainer = document.getElementById("quiz");
+  if (currentQuestion < quizData.length) {
+    const q = quizData[currentQuestion];
+    quizContainer.innerHTML = `
+      <div class="card quiz">
+        <h2>${q.question}</h2>
+        <div class="answers">
+          ${q.options.map(opt => `<button class="btn btn-outline" onclick="checkAnswer('${opt}')">${opt}</button>`).join("")}
+        </div>
+      </div>
+    `;
+  } else {
+    showResult();
+  }
+}
+
+// Cek jawaban
+function checkAnswer(selected) {
+  if (selected === quizData[currentQuestion].answer) {
+    score++;
+    alert("Benar!");
+  } else {
+    alert("Salah. Jawaban benar: " + quizData[currentQuestion].answer);
+  }
+  currentQuestion++;
+  loadQuestion();
+}
+
+// Tampilkan hasil akhir
+function showResult() {
+  const quizContainer = document.getElementById("quiz");
+  quizContainer.innerHTML = `
+    <div class="card">
+      <h2>Hasil Kuis</h2>
+      <p>Kamu benar ${score} dari ${quizData.length} soal.</p>
+      <button class="btn btn-primary" onclick="restartQuiz()">Ulangi Kuis</button>
+    </div>
+  `;
+}
+
+// Ulangi kuis
+function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  loadQuestion();
+}
+
+// Load pertama kali
+document.addEventListener("DOMContentLoaded", loadQuestion);
