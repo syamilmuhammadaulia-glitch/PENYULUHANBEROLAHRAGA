@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pentingnya Berolahraga</title>
+  <meta name="description" content="Website edukasi tentang pentingnya berolahraga untuk pelajar dan masyarakat." />
+  <style>
+    /* Reset ringan */
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html,body { height: 100% }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: #f7fbfb;
+      color: #163243;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      padding: 20px;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(6,22,36,0.06);
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      background: linear-gradient(90deg,#19a974 0%, #2b9bd6 100%);
+      color: #fff;
+    }
+
+    .brand {
+      display: flex; gap: 12px; align-items: center;
+    }
+
+    .logo {
+      width:46px; height:46px; background: rgba(255,255,255,0.12); border-radius:10px;
+      display:flex; align-items:center; justify-content:center; font-weight:700
+    }
+
+    nav {
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    nav a.active { background: rgba(255,255,255,0.12) }
+
+    main { padding: 22px }
+
+    .hero {
+      display:flex; gap:18px; align-items:center; flex-wrap:wrap;
+      background: linear-gradient(180deg,#f0fdf7 0%, #ffffff 100%);
+      padding: 18px; border-radius:10px; margin-bottom:18px;
+    }
+
+    .hero .left { flex:1; min-width:240px }
+    .hero h1 { font-size:20px; margin-bottom:8px }
+    .hero p { color:#1f3b4b }
+
+    .hero .icons { display:flex; gap:10px; flex-wrap:wrap }
+    .icon-card { background:#fff; border-radius:8px; padding:10px; display:flex; gap:8px; align-items:center; box-shadow:0 4px 10px rgba(6,22,36,0.03) }
+
+    /* Grid untuk isi */
+    .grid { display:grid; grid-template-columns: 1fr 340px; gap:18px }
+
+    @media (max-width:880px) {
+      .grid { grid-template-columns:1fr }
+      nav { gap:6px }
+      .container { margin:10px }
+    }
+
+    /* Card */
+    .card { background:#fbfeff; padding:14px; border-radius:10px; box-shadow:0 4px 12px rgba(6,22,36,0.03) }
+    h2 { font-size:16px; margin-bottom:10px }
+    ul.list { list-style:none; display:flex; flex-direction:column; gap:8px }
+    ul.list li { background:#fff; padding:10px; border-radius:8px }
+
+    /* Table simple */
+    .types { display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
+    @media (max-width:520px) { .types { grid-template-columns:1fr } }
+
+    /* Games */
+    .quiz { display:flex; flex-direction:column; gap:12px }
+    .answers { display:flex; flex-direction:column; gap:8px }
+    button.btn { padding:10px 12px; border-radius:8px; border:0; cursor:pointer; font-weight:600 }
+    .btn-primary { background:#19a974; color:#fff }
+    .btn-outline { background:#fff; border:1px solid #d6eaf0 }
+
+    footer { padding:12px 22px; text-align:center; font-size:13px; color:#4b6b7a }
+
+    /* Small helper */
+    .muted { color:#4b6b7a; font-size:13px }
+    .center { text-align:center }
+
+    /* Image placeholders */
+    .item-icon { width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; background:#f1fbf8 }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">OL</div>
+        <div>
+          <div style="font-weight:800">Pentingnya Berolahraga</div>
+          <div style="font-size:12px; opacity:0.95">Media edukasi untuk pelajar</div>
+        </div>
+      </div>
+      <nav id="mainNav">
+        <a href="#home" data-target="home" class="active">Home</a>
+        <a href="#manfaat" data-target="manfaat">Manfaat</a>
+        <a href="#jenis" data-target="jenis">Jenis</a>
+        <a href="#tips" data-target="tips">Tips</a>
+        <a href="#games" data-target="games">Games</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="page">
+        <div class="hero">
+          <div class="left">
+            <h1>Kenapa kita perlu olahraga?</h1>
+            <p>Olahraga membantu tubuh sehat. Olahraga membuat pikiran lebih tenang. Olahraga juga menambah energi dan daya tahan tubuh. Mulai dari gerakan sederhana selama 15 menit setiap hari.
+            </p>
+            <div style="margin-top:10px"><button class="btn btn-primary" onclick="showSection('manfaat')">Pelajari Manfaat</button></div>
+          </div>
+          <div class="icons">
+            <div class="icon-card"><div class="item-icon">⚽</div><div>Sepak bola</div></div>
+            <div class="icon-card"><div class="item-icon">👟</div><div>Sepatu lari</div></div>
+            <div class="icon-card"><div class="item-icon">🏸</div><div>Bulutangkis</div></div>
+            <div class="icon-card"><div class="item-icon">🧘</div><div>Yoga</div></div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="grid">
+          <div>
+            <div class="card">
+              <h2>Ringkas dan jelas</h2>
+              <p class="muted">Website ini menjelaskan manfaat olahraga. Isinya cocok untuk pelajar SMP. Gunakan sebagai bahan penyuluhan atau tugas sekolah.</p>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card">
+              <h2>Bagaimana memulai</h2>
+              <ul class="list">
+                <li>Mulai dari pemanasan 5 menit.</li>
+                <li>Latihan 15 sampai 30 menit tiap hari.</li>
+                <li>Istirahat cukup dan minum air.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside>
+            <div class="card center">
+              <h2>Gambar item olahraga</h2>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:8px">
+                <div class="item-icon">⚽</div>
+                <div class="item-icon">👟</div>
+                <div class="item-icon">🪢</div>
+                <div class="item-icon">🏸</div>
+                <div class="item-icon">🏋️</div>
+                <div class="item-icon">🧘</div>
+              </div>
+              <p class="muted" style="margin-top:8px">Contoh gambar yang bisa dipakai pada halaman</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="manfaat" class="page" style="display:none">
+        <div class="card">
+          <h2>Manfaat olahraga</h2>
+          <ul class="list">
+            <li>Sehat jantung dan paru. Olahraga bantu jaga fungsi organ.</li>
+            <li>Tubuh lebih kuat. Otot dan tulang jadi lebih terlatih.</li>
+            <li>Pikiran lebih tenang. Kurangi stres dan cemas.</li>
+            <li>Tidur lebih nyenyak. Kualitas tidur meningkat setelah rutin bergerak.</li>
+            <li>Sosial. Olahraga kelompok menambah teman dan kerja sama.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="jenis" class="page" style="display:none">
+        <div class="card">
+          <h2>Jenis olahraga</h2>
+          <div class="types" style="margin-top:8px">
+            <div class="card">
+              <h3 style="font-size:14px">Ringan</h3>
+              <ul class="list">
+                <li>Jalan cepat 15 menit</li>
+                <li>Senam ringan</li>
+                <li>Yoga & peregangan</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="font-size:14px">Sedang</h3>
+              <ul class="list">
+                <li>Joging 20 menit</li>
+                <li>Sepeda santai</li>
+                <li>Bulutangkis</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="font-size:14px">Berat</h3>
+              <ul class="list">
+                <li>Lifting ringan dengan pengawasan</li>
+                <li>Latihan interval intensitas tinggi</li>
+                <li>Olahraga tim kompetitif</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="font-size:14px">Untuk pelajar</h3>
+              <ul class="list">
+                <li>Pilih sesuai usia. Mulai dari ringan.</li>
+                <li>Jangan langsung ke intensitas tinggi tanpa bimbingan.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tips" class="page" style="display:none">
+        <div class="card">
+          <h2>Tips berolahraga aman</h2>
+          <ul class="list">
+            <li>Mulai dengan pemanasan. 5 sampai 10 menit.</li>
+            <li>Mengikuti batas tubuh. Hentikan jika pusing atau sakit.</li>
+            <li>Minum air sebelum dan setelah latihan.</li>
+            <li>Pilih pakaian dan sepatu yang nyaman.</li>
+            <li>Konsultasi ke guru olahraga atau orang tua bila perlu.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="games" class="page" style="display:none">
+        <div class="card">
+          <h2>Games edukasi</h2>
+          <div style="margin-top:8px">
+            <div class="card" style="margin-bottom:12px">
+              <h3 style="font-size:14px">Kuis singkat</h3>
+              <div id="quiz" class="quiz">
+                <div id="qtext">Memuat soal...</div>
+                <div id="answers" class="answers"></div>
+                <div style="display:flex; gap:8px">
+                  <button class="btn btn-outline" id="prevBtn">Sebelumnya</button>
+                  <button class="btn btn-primary" id="nextBtn">Selanjutnya</button>
+                </div>
+                <div id="score" class="muted" style="margin-top:6px"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="font-size:14px">Tebak gambar</h3>
+              <div id="imageGame" style="display:flex; gap:8px; flex-direction:column; align-items:center">
+                <div style="font-size:28px" id="imgPlaceholder">⚽</div>
+                <div id="imgChoices" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center"></div>
+                <div id="imgResult" class="muted" style="margin-top:8px"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Dibuat untuk proyek sekolah. Sederhana dan mudah dipakai.
+    </footer>
+  </div>
+
+  <script>
+    // Simple SPA navigation
+    const pages = document.querySelectorAll('.page')
+    const navLinks = document.querySelectorAll('nav a')
+    function showSection(id) {
+      pages.forEach(p => p.style.display = p.id === id ? '' : 'none')
+      navLinks.forEach(a => a.classList.toggle('active', a.dataset.target === id))
+      window.location.hash = id
+    }
+    document.getElementById('mainNav').addEventListener('click', e => {
+      if (e.target.matches('a')) {
+        e.preventDefault()
+        showSection(e.target.dataset.target)
+      }
+    })
+    // init
+    const initial = (location.hash && location.hash.slice(1)) || 'home'
+    showSection(initial)
+
+    // QUIZ data and logic
+    const quizData = [
+      { q: 'Berapa lama minimal berolahraga ringan tiap hari untuk pemula', choices: ['5 menit','15 menit','2 jam'], a: 1 },
+      { q: 'Mana yang termasuk olahraga kardio', choices: ['Lari','Angkat beban','Yoga'], a: 0 },
+      { q: 'Sebelum latihan sebaiknya melakukan', choices: ['Pemanasan','Makan berat','Tidur siang'], a: 0 },
+      { q: 'Olahraga bantu meningkatkan', choices: ['Kekuatan otot','Warna rambut','Tinggi badan langsung'], a: 0 },
+      { q: 'Saat merasa pusing saat olahraga, Anda harus', choices: ['Lanjut terus','Berhenti dan istirahat','Minum kopi'], a: 1 }
+    ]
+
+    let qIndex = 0
+    const qtext = document.getElementById('qtext')
+    const answers = document.getElementById('answers')
+    const prevBtn = document.getElementById('prevBtn')
+    const nextBtn = document.getElementById('nextBtn')
+    const scoreEl = document.getElementById('score')
+    const userAnswers = Array(quizData.length).fill(null)
+
+    function renderQuestion() {
+      const item = quizData[qIndex]
+      qtext.textContent = `${qIndex + 1}. ${item.q}`
+      answers.innerHTML = ''
+      item.choices.forEach((c, i) => {
+        const b = document.createElement('button')
+        b.className = 'btn btn-outline'
+        b.textContent = c
+        b.onclick = () => {
+          userAnswers[qIndex] = i
+          renderQuestion()
+          updateScoreText()
+        }
+        if (userAnswers[qIndex] === i) b.style.border = '2px solid #19a974'
+        answers.appendChild(b)
+      })
+      prevBtn.disabled = qIndex === 0
+      nextBtn.textContent = qIndex === quizData.length - 1 ? 'Selesai' : 'Selanjutnya'
+    }
+
+    function updateScoreText() {
+      const answered = userAnswers.filter(x => x !== null).length
+      scoreEl.textContent = `Terjawab ${answered} dari ${quizData.length}`
+    }
+
+    prevBtn.addEventListener('click', () => { if (qIndex > 0) { qIndex--; renderQuestion() } })
+    nextBtn.addEventListener('click', () => {
+      if (qIndex < quizData.length - 1) {
+        qIndex++; renderQuestion()
+      } else {
+        // finish
+        let correct = 0
+        userAnswers.forEach((ans, i) => { if (ans === quizData[i].a) correct++ })
+        scoreEl.textContent = `Skor: ${correct} / ${quizData.length}`
+        alert('Kuis selesai. Skor: ' + correct + ' dari ' + quizData.length)
+      }
+    })
+
+    renderQuestion()
+    updateScoreText()
+
+    // IMAGE GUESS game
+    const imageItems = [
+      { icon: '⚽', name: 'Sepak bola' },
+      { icon: '👟', name: 'Sepatu' },
+      { icon: '🪢', name: 'Skipping rope' },
+      { icon: '🏸', name: 'Raket' },
+      { icon: '🏋️', name: 'Dumbbell' },
+      { icon: '🧘', name: 'Matras yoga' }
+    ]
+
+    function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]] } }
+
+    const imgPlaceholder = document.getElementById('imgPlaceholder')
+    const imgChoices = document.getElementById('imgChoices')
+    const imgResult = document.getElementById('imgResult')
+
+    function startImageGame() {
+      imgChoices.innerHTML = ''
+      imgResult.textContent = ''
+      // pick one target
+      const pool = [...imageItems]
+      shuffle(pool)
+      const target = pool[0]
+      imgPlaceholder.textContent = target.icon
+
+      // prepare choices
+      const opts = pool.slice(0,4)
+      shuffle(opts)
+      opts.forEach(o => {
+        const b = document.createElement('button')
+        b.className = 'btn btn-outline'
+        b.textContent = o.name
+        b.onclick = () => {
+          if (o.name === target.name) {
+            imgResult.textContent = 'Benar!'
+          } else {
+            imgResult.textContent = 'Salah. Jawaban: ' + target.name
+          }
+        }
+        imgChoices.appendChild(b)
+      })
+    }
+
+    startImageGame()
+
+    // small accessibility: keyboard to navigate sections with numbers 1-5
+    window.addEventListener('keydown', e => {
+      if (e.key >= '1' && e.key <= '5') {
+        const map = { '1':'home','2':'manfaat','3':'jenis','4':'tips','5':'games' }
+        showSection(map[e.key])
+      }
+    })
+  </script>
+</body>
+</html>
